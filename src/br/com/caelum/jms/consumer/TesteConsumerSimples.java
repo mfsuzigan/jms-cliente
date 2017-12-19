@@ -1,4 +1,4 @@
-package br.com.caelum.jms;
+package br.com.caelum.jms.consumer;
 
 import javax.jms.Connection;
 import javax.jms.ConnectionFactory;
@@ -10,7 +10,7 @@ import javax.jms.Session;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
-public class TesteClienteSimples {
+public class TesteConsumerSimples {
 
 	public static void main(String[] args) throws NamingException, JMSException {
 
@@ -27,7 +27,7 @@ public class TesteClienteSimples {
 		// false = nao utilizar transacoes
 		Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
 
-		// lookup para a destination (fila)a
+		// lookup para a destination (fila)
 		Destination filaFinanceiro = (Destination) context.lookup("financeiro");
 
 		MessageConsumer consumer = session.createConsumer(filaFinanceiro);
