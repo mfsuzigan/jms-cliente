@@ -15,6 +15,7 @@ public class TesteConsumerSimples {
 	public static void main(String[] args) throws NamingException, JMSException {
 
 		System.out.println("Buscando contexto JNDI");
+		// vai buscar o jndi.properties automaticamente, poderia passar um Properties
 		InitialContext context = new InitialContext();
 
 		// lookup para a connection factory
