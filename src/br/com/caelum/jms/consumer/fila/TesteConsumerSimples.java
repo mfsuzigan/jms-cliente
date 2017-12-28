@@ -1,4 +1,4 @@
-package br.com.caelum.jms.consumer;
+package br.com.caelum.jms.consumer.fila;
 
 import javax.jms.Connection;
 import javax.jms.ConnectionFactory;

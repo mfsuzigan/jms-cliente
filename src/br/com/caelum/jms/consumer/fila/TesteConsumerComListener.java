@@ -1,4 +1,4 @@
-package br.com.caelum.jms.consumer;
+package br.com.caelum.jms.consumer.fila;
 
 import javax.jms.Destination;
 import javax.jms.JMSException;
@@ -20,13 +20,14 @@ public class TesteConsumerComListener {
 	 */
 	public static void main(String[] args) {
 
-		System.out.println("Criando consumer de mensagens");
+		String destinationName = "financeiro";
+		System.out.println("Criando consumer de mensagens. Destination: " + destinationName);
 		JmsUtils utils = new JmsUtils();
-		Destination filaFinanceiro = utils.getDestination("financeiro");
+		Destination destination = utils.getDestination(destinationName);
 
 		try {
 			Session session = utils.getSession();
-			MessageConsumer consumer = session.createConsumer(filaFinanceiro);
+			MessageConsumer consumer = session.createConsumer(destination);
 
 			System.out.println("Atribuindo listener");
 			consumer.setMessageListener(new TesteClienteTextListener());
