@@ -28,7 +28,7 @@ public class JmsUtils {
 			connectionFactory = connectionFactory == null ? (ConnectionFactory) context.lookup("ConnectionFactory")
 					: connectionFactory;
 			connection = connection == null ? connectionFactory.createConnection() : connection;
-			connection.setClientID("jmsUtilsClient");
+			connection.setClientID("clientId");
 			connection.start();
 
 		} catch (NamingException | JMSException e) {

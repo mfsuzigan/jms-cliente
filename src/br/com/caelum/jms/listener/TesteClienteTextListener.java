@@ -15,8 +15,8 @@ public class TesteClienteTextListener implements MessageListener {
 		if (TextMessage.class.isAssignableFrom(message.getClass())) {
 			TextMessage textMessage = (TextMessage) message;
 			try {
-				System.out.println("Recebendo mensagem pelo listener: " + textMessage.getText() + " ["
-						+ new Date(textMessage.getJMSTimestamp()) + "]");
+				System.out.println("Recebendo mensagem pelo listener: " + textMessage.getText() + ", propriedades: ["
+						+ textMessage.getPropertyNames() + "], [" + new Date(textMessage.getJMSTimestamp()) + "]");
 
 			} catch (JMSException e) {
 				throw new RuntimeException(e);

@@ -23,6 +23,7 @@ public class TesteProducer {
 			for (int i = 1; i < 11; i++) {
 				System.out.println("Criando mensagem (topico) " + i);
 				TextMessage textMessage = session.createTextMessage("Mensagem exemplo " + i);
+				// textMessage.setBooleanProperty("temSelector", true);
 				producer.send(textMessage);
 			}
 
