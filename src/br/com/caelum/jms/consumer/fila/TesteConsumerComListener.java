@@ -20,7 +20,7 @@ public class TesteConsumerComListener {
 	 */
 	public static void main(String[] args) {
 
-		String destinationName = "estoque";
+		String destinationName = "log";
 		System.out.println("Criando consumer de mensagens. Destination: " + destinationName);
 		JmsUtils utils = new JmsUtils();
 		Destination destination = utils.getDestination(destinationName);

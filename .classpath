@@ -2,6 +2,6 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="lib/activemq-all-5.12.0.jar"/>
+	<classpathentry kind="lib" path="lib/activemq-all-5.12.0.jar" sourcepath="lib/geronimo-jms_1.1_spec-1.1.1-sources.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
