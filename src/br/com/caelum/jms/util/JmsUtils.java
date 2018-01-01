@@ -42,8 +42,18 @@ public class JmsUtils {
 	 * @return
 	 */
 	public Session getSession() {
+		return getSession(false, Session.AUTO_ACKNOWLEDGE);
+	}
+
+	/**
+	 * Retorna uma {@link Session} com as opcoes informadas
+	 *
+	 * @return
+	 */
+	public Session getSession(boolean deveUtilizarContextoTransacional, int sessionAcknowledgeStyle) {
 		try {
-			return session == null ? connection.createSession(false, Session.AUTO_ACKNOWLEDGE) : session;
+			return session == null ? connection.createSession(deveUtilizarContextoTransacional, sessionAcknowledgeStyle)
+					: session;
 
 		} catch (JMSException e) {
 			throw new RuntimeException(e);

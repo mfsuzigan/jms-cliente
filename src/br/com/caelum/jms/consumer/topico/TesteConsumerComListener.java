@@ -27,7 +27,7 @@ public class TesteConsumerComListener {
 
 		try {
 			Session session = utils.getSession();
-			MessageConsumer consumer = session.createDurableSubscriber(topico, "topicoEstoqueSubscription");
+			MessageConsumer consumer = session.createDurableSubscriber(topico, "topicoEstoqueSubscriptionSimples");
 
 			System.out.println("Atribuindo listener");
 			consumer.setMessageListener(new TesteClienteTextListener());
